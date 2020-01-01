@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using Antlr.Runtime;
 using BinaryConverterWeb.Models;
 
+
 namespace BinaryConverterWeb.Controllers
 {
     public class HomeController : Controller
