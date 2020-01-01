@@ -1,0 +1,93 @@
+﻿
+
+body {
+
+}
+
+/*   Advertisement  Ads part  */
+
+/* Heder Bottom Ads*/
+
+.MiddleAdsGroup {
+
+    margin-top: 10px;
+}
+.RightAdsOne, .LeftSideAdsFive, .LeftSideAdsSix, .LeftSideAdsSeven, .LeftSideAdsEight, 
+.RightSideAdsNine, .RightSideAdsTen, .RightSideAdsEleven, .RightSideAdsTwelve {
+
+    max-width: 160px;
+    height: 600px;
+    margin: auto;
+    background: gray;
+}
+.MiddleAdsGroupTwo, .MiddleAdsGroupThree, .MiddleAdsGroupFour {
+
+    max-width: 320px;
+    height: 100px;
+    margin: auto;
+    background: gray;
+}
+.MiddeleAdsThirteen, .MiddeleAdsFourteen, .MiddeleAdsFifteen, .MiddeleAdsSixteen, .MiddeleAdsSeventeen {
+
+    max-width: 468px;
+    height: 60px;
+    background: gray;
+}
+
+
+/*   Heder part  */
+
+.Heder {
+    
+    margin-top: 20px;
+}
+.LeftSideBar {
+
+    border: green 2px solid;
+    padding: 10px;
+} 
+ .Heder {
+
+     margin-left: 5px;
+ }
+#ShowMoreLink {
+
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+   
+    .LeftSideBar{
+
+        display: none;
+    } 
+    #ShowMoreLink {
+
+        display: block;
+    }
+}
+#NameHeading {
+   
+    font-weight: bold;
+}
+.AsciiValue {
+
+    border: 1px solid;
+    padding-left: 50px;
+    padding-right: 10px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.BinaryValue {
+
+    border: 1px solid;
+    padding-left: 50px;
+    padding-right: 10px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+#OutputHeading {
+
+    font-weight: bold;
+}
+

@@ -1,0 +1,328 @@
+﻿
+@model BinaryConverterWeb.Models.CommentModel
+           
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="~/CSS/FontAwsomeStyleSheet.css" rel="stylesheet" />
+    <link href="~/CSS/NavbarStyleSheet.css" rel="stylesheet" />
+
+</head>
+<body>
+    
+<div id="navbar">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("BINARYNAME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", id="BrandName" })
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+                @*   Frist DropDown  *@
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> CONVERT WITH ASCII <b class="caret"></b></a>
+
+                    @*      Sub menu of Dropdown   01 *@
+
+                    <ul class="dropdown-menu">
+                        
+                        <li><a href="/Home/StringToDecimal">String To Decimal</a></li>
+                        <li><a href="/Home/Index">String To Binary</a></li>
+                        <li><a href="/Home/StringToOctal">String To Octal</a></li>
+                        <li><a href="/Home/StringToHexadecimal">String To Hexadecimal</a></li>
+
+                        <li><a href="/Home/DecimalToBinary">Decimal To Binary</a></li>
+                        <li><a href="/Home/OctalToBinary">Octal To Binary</a></li>
+                        <li><a href="/Home/HexadecimalToBinary">Hexadecimal To Binary</a></li>
+
+                        <li><a href="/Home/BinaryToDecimal">Binary To Decimal</a></li>
+                        <li><a href="/Home/BinaryToOctal">Binary To Octal</a></li>
+                        <li><a href="/Home/BinaryToHexadecimal">Binary To Hexadecimal</a></li>
+
+
+                    </ul>
+                </li> 
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> CONVERT WITHOUT ASCII <b class="caret"></b></a>
+
+                    @*      Sub menu of Dropdown   01 *@
+
+                    <ul class="dropdown-menu">
+                        
+                        <li><a href="/WithOutAscii/BinaryToDecimal">Binary To Decimal</a></li>
+                        <li><a href="/WithOutAscii/BinaryToOctal">Binary To Octal</a></li>
+                        <li><a href="/WithOutAscii/BinaryToHexadecimal">Binary To Hexadecimal</a></li>
+
+                        <li><a href="/WithOutAscii/OctalToDecimal">Octal To Decimal</a></li>
+                        <li><a href="/WithOutAscii/OctalToBinary">Octal To Binary</a></li>
+                        <li><a href="/WithOutAscii/OctalToHexadecimal">Octal To Hexadecimal</a></li>
+
+                        <li><a href="/WithOutAscii/HexadecimalToDecimal">Hexadecimal To Decimal</a></li>
+                        <li><a href="/WithOutAscii/HexadecimalToBinary">Hexadecimal To Binary</a></li>
+                        <li><a href="/WithOutAscii/HexadecimalToOctal">Hexadecimal TO Octal</a></li>
+
+                        <li><a href="/WithOutAscii/DecimalToBinary">Decimal To Binary</a></li>
+
+                    </ul>
+                </li>  
+                @*@Html.Partial("_LoginPartial")*@              
+            </ul>
+            @*<ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>*@
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+</div>
+
+<br/> <br/>
+<div class="container">
+    <div class="row">
+        <div class="BannerAds">
+            
+        </div>
+    </div>
+</div>
+<div class="body">
+    
+    @RenderBody()
+    
+    <br /><br /><br />
+<section>
+    <div class="container">
+        <div class="UsesGuidLine">
+            <div class="row">
+                <h1>HOW TO USE THIS</h1>
+                <p> At first select any option which format you convert. Then enter your input in input field and click convert buttton for convert your input to (selected data format) output. finally, you can see your converted output in the output field. </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="MiddleAdsGroup">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="MiddleAdsGroupTwo">
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="MiddleAdsGroupThree">
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="MiddleAdsGroupFour">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="Discription">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                <div class="LeftSideAdsFive">
+                    
+                </div> <br/>
+                <div class="LeftSideAdsSix">
+                    
+                </div> <br/>
+                <div class="LeftSideAdsSeven">
+                    
+                </div> <br/>
+                <div class="LeftSideAdsEight">
+                    
+                </div>
+
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-6">
+                <div class="DiscriptionParagraph">
+                    <div>
+                        <h1>DECIMAL NUMBER SYSTEAM</h1>
+                        <br/> <br/>
+                        <img src="~/Images/Decimal.jpg" class="img-responsive"/>
+                        <br/> <br/>
+                        <P>
+                            Decimal number system, also called Hindu-Arabic, or Arabic, number system, in mathematics, positional numeral system employing 10 as the base and requiring 10 different numerals, the digits 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. It also requires a dot (decimal point) to represent decimal fractions.
+                        </P>
+                    </div>
+                    <div class="MiddeleAdsThirteen">
+                        
+                    </div>
+                    <div>
+                        <h1>BINARY NUMBER SYSTEAM</h1>
+                        <br/> <br/>
+                        <img src="~/Images/binary-number.svg" class="img-responsive"/> <br/>
+                        <P>
+                            Binary number. In mathematics and digital electronics, a binary number is a number expressed in the base-2 numeral system or binary numeral system, which uses only two symbols: typically "0" (zero) and "1" (one). The base-2 numeral system is a positional notation with a radix of 2. Each digit is referred to as a bit.
+                        </P>
+                    </div>
+                    <div class="MiddeleAdsFourteen">
+                        
+                    </div>
+                    <div>
+                        <h1>OCTAL NUMBER SYSTEAM</h1>
+                        <br/> <br/>
+                        <img src="~/Images/Octal.png" class="img-responsive" />
+
+                        <br/>
+                        <P>
+                            The octal numeral system, or oct for short, is the base-8 number system, and uses the digits 0 to 7. Octal numerals can be made from binary numerals by grouping consecutive binary digits into groups of three (starting from the right). ... In the octal system each place is a power of eight.
+                        </P>
+                    </div>
+                    <div class="MiddeleAdsFifteen">
+                        
+                    </div>
+                    <div>
+                        <h1>HEX NUMBER SYSTEAM</h1>
+                        <br/> <br/> 
+                        <img src="~/Images/computer_math.png" class="img-responsive"/>                      
+
+                        <br/>
+                        <P>
+                            The hexadecimal numeral system, also often called just "hex", is a numeral system made up of 16 symbols (base 16). The standard numeral system is called decimal (base 10) and uses ten symbols: 0,1,2,3,4,5,6,7,8,9. Hexadecimal uses the decimal numbers and includes six extra symbols.
+                        </P>
+                    </div>   
+                    <div class="MiddeleAdsSixteen">
+                        
+                    </div>   
+                    <div>
+                        <h1>ASCII NUMBER SYSTEAM</h1>
+                        <br/>
+                        <P>
+                            ASCII (American Standard Code for Information Interchange) is the most common format for text files in computers and on the Internet. In an ASCII file, each alphabetic, numeric, or special character is represented with a 7-bit binary number (a string of seven 0s or 1s).
+                        </P>
+                        <br /> <br />
+                        <img src="~/Images/Ascii-Table.png" class="img-responsive"/>
+                    </div> <br/>
+                    <div class="MiddeleAdsSeventeen">
+                        
+                    </div>  
+                </div>
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                <div class="RightSideAdsNine">
+                    
+                </div> <br/>
+                <div class="RightSideAdsTen">
+                    
+                </div> <br/>
+                <div class="RightSideAdsEleven">
+                    
+                </div> <br/>
+                <div class="RightSideAdsTwelve">
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>   
+<section>
+        <br/> <br/> <br/> <br/>
+        <div class="ChatBox"> <br/> <br/>
+            <div class="row">
+                <div class="container">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"> <br/> <br/>
+                        <form class="form-horizontal" , role="form">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new {@class = " control-label col-md-2"})
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Name, new {@class = "form-control", placeholder = "     enter your name"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Comment1, new {@class = " control-label col-md-2"})
+                                <div class="col-md-10">
+                                    @Html.TextAreaFor(m => m.Comment1, new {@class = "form-control", placeholder = "     write your comment here"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" class="btn btn-success" value="Comment"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="BottomAdsEighteen">
+                           
+                        </div> <br/> <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <br/> <br/>
+    <footer>
+        <div class="Fotter">
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <img src="~/Images/logo.png" class="img-circle img-responsive" />
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6" id="BottomCountryName">
+                <h4>Philadelphia</h4>
+                <h4>New York</h4>
+                <h4>London</h4>
+                <h4>Delhi</h4>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="SignUp">
+                    <h2>JOIN WITH US</h2>
+                    <P>and millions of developer friends worldwide.</P>
+                    <br/> <br/>
+                    <a href="#" class="btn-default">Sign Up</a>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="LearnMore">
+                    <a href="">Learn ASP.NET MVC </a><br/>
+                    <a href=""> Learn ASP.NET Core </a><br/>
+                    <a href="">Learn Python </a><br/>
+                    <a href="">Learn JavaScript </a><br/>
+                    <a href=""> Learn Sql Server </a><br/>
+                    <a href="">More... </a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                <div class="SocialMediaLink">                
+                    <a href=""><i class="fab fa-facebook-square"></i></a><br/>
+                    <a href=""><i class="fab fa-linkedin"></i></a><br/>
+                    <a href=""><i class="fab fa-youtube-square"></i></a><br/>
+                    <a href=""><i class="fab fa-twitter-square"></i></a>         
+                </div>
+            </div>
+        </div>
+        <div class="Footerfotter">
+            <p>@DateTime.Now.Year &nbsp;- <a href="" id="DeveloperLinkID"> Designed & Developed by @@Rayhan</a></p>
+        </div>
+    </footer>
+</div>
+    
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+
+</body>
+</html>

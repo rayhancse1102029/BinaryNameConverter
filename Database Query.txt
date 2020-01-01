@@ -1,0 +1,27 @@
+
+
+
+
+use[BinaryName]
+go
+
+create table Registration
+(
+ID int primary key identity,
+UserName varchar(20),
+Emai varchar(50),
+Password varchar(8),
+);
+
+create table Login
+(
+UserName varchar(20) primary key,
+Password varchar(8)
+);
+
+create table Comment
+(
+ID int primary key identity,
+Name varchar(20),
+Comment varchar(1000)
+);

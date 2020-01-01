@@ -1,0 +1,131 @@
+﻿@using WebGrease.Css.Ast.MediaQuery
+@model BinaryConverterWeb.Models.StringInputModel
+
+
+<html>
+<head>
+    <title>Binary-To-Octal-Converter</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="~/CSS/HomeIndexStyleSheet.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    @using (Html.BeginForm("BinaryToOctal", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <br />
+        <div class="Heder">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" id="DisplayNoneCol">
+                    <h4 id="ShowMoreLink"><a href="#" onclick="myFunction()">Click here to show more Converter Option</a></h4>
+                    <div class="LeftSideBar" id="HiddenDiv">
+                        <a href="/WithOutAscii/DecimalToBinary" type="btn" class="btn btn-default btn-block btn-danger">CON WITHOUT ASCII</a> 
+                        <a href="/Home/StringToDecimal" type="btn" class="btn btn-default btn-block btn-success">String To Decimal</a>
+                        <a href="/Home/Index" type="btn" class="btn btn-default btn-block btn-success">String To Binary</a>
+                        <a href="/Home/StringToOctal" type="btn" class="btn btn-default btn-block btn-success">String To Octal</a>
+                        <a href="/Home/StringToHexadecimal" type="btn" class="btn btn-default btn-block btn-success">String To Hexadecimal</a>
+
+                        <a href="/Home/DecimalToBinary" type="btn" class="btn btn-default btn-block btn-success">Decimal To Binary</a>
+                        <a href="/Home/OctalToBinary" type="btn" class="btn btn-default btn-block btn-success">Octal To Binary</a>
+                        <a href="/Home/HexadecimalToBinary" type="btn" class="btn btn-default btn-block btn-success">Hexadecimal To Binary</a>
+
+                        <a href="/Home/BinaryToDecimal" type="btn" class="btn btn-default btn-block btn-success">Binary To Decimal</a>
+                        <a href="/Home/BinaryToOctal" type="btn" class="btn btn-default btn-block btn-success">Binary To Octal</a>
+                        <a href="/Home/BinaryToHexadecimal" type="btn" class="btn btn-default btn-block btn-success">Binary To Hexadecimal</a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-8 col-sm-10 col-xs-8">
+                    <div class="myForm">
+                        <div>
+                            <h1 id="NameHeading"><b>BINARY TO OCTAL</b></h1>
+                            <a href="/WithOut/DecimalToBinary">Click here to convert without Ascii</a> <br/>
+                            <a href="/Home/Index">Click here to see your Binary name</a>
+                            <br /><br /><br />
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Text, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(m => m.Text, new { @class = "form-control", placeholder = "     enter your name/text here", @rows = "5", style = "max-width: 100%", onkeypress = "return RestrictSpace()" })
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" class="btn btn-default" value=" Convert " />
+                                <span style="color: red; font-size: 20px;"> @ViewBag.ErrorMessage </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Output">
+                        <div class="AsciiOutput">
+                            <h3>
+                                <b>ASCII RESULT</b>
+                            </h3>
+                            <div class="AsciiValue">
+                                @if (ViewBag.AsciiOutput != null)
+                                {
+                                    foreach (var iteam in ViewBag.AsciiOutput)
+                                    {
+                                        @iteam
+                                    }
+
+                                }
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="BinaryOutput">
+                            <h3 id="OutputHeading"><b>OCTAL RESULT</b></h3>
+                            <div class="BinaryValue">
+                                @if (ViewBag.BinaryOutput != null)
+                                {
+                                    foreach (var iteam in ViewBag.BinaryOutput)
+                                    {
+                                        @iteam
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                    <div class="RightAdsOne">
+
+                        @*    i am Ads Three     *@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+
+    function myFunction() {
+        var x = document.getElementById("HiddenDiv");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function RestrictSpace() {
+        if (event.keyCode == 32) {
+            event.returnValue = false;
+            return false;
+        }
+    }
+    </script>
+
+</body>
+</html>
